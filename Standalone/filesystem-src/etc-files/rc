@@ -7,3 +7,8 @@ prtroot >/etc/mtab
 #fsck -a
 #mount -a
 >/var/run/utmp
+
+echo "Starting networking"
+stty 9600 < /dev/tty5
+netd-slip&
+ifconfig eth0 ip 192.168.240.2 netmask 255.255.255.255 gw 192.168.240.1

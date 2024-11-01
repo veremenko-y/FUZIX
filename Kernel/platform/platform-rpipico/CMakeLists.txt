@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.13)
 
 # Pull in SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -6,7 +6,8 @@ include(pico_sdk_import.cmake)
 project(fuzix C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
-set(PICO_COPY_TO_RAM 1)
+# set(PICO_BOARD pico2)
+# set(PICO_COPY_TO_RAM 1)
 
 add_compile_definitions(
 		PICO_HEAP_SIZE=0x0

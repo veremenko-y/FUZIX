@@ -164,9 +164,9 @@ static struct termios t;
 int device_init(void)
 {
     /* FIXME: don't hard code */
-    fd=open( "/dev/tty4", O_RDWR|O_NOCTTY);
+    fd=open( "/dev/tty5", O_RDWR|O_NOCTTY);
     if( fd < 0  || tcgetattr(fd, &t) < 0) {
-        perror("/dev/tty4");
+        perror("/dev/tty5");
 	return -1;
     }
     t.c_iflag  = IGNBRK;
@@ -179,7 +179,7 @@ int device_init(void)
     t.c_cc[VTIME] = 3;	/* 0.3 seconds */
 
     if (tcsetattr(fd, 0, &t) < 0) {
-        perror("/dev/tty4");
+        perror("/dev/tty5");
         return -1;
     }
     return 0;
