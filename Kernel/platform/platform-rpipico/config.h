@@ -72,7 +72,7 @@
 #define UDATA_BLKS  3
 #define UDATA_SIZE  (UDATA_BLKS << BLKSHIFT)
 
-#define TOTALMEM 160
+#define TOTALMEM 166
 #define NETMEM 0
 
 #ifdef CONFIG_NET
